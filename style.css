@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --fontRaleway: 'Raleway', sans-serif;
+    --cor1: #2A8C82;
+    --cor2: #41BFB3;
+    --cor3: #9BF2EA;
+    --cor4: #275950;
+    --cor5: #260101;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--fontRaleway);
+    background: var(--cor4);
+    height: 8vh;
+}
+nav a{ 
+    color: var(--cor3);
+    text-decoration: none;
+    padding: 0px 50px 10px 0;
+    position: relative;
+}
+nav a::after{
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color: var(--cor3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+nav a:hover::after {
+    width: 100%;
+}
+main {
+    background-color:var(--cor5); 
+    background-size: cover;
+    height: 92vh;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: var(--cor3);
+    margin: 8px;
+    transition: 0.3s;
+}
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #260101;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+/*Conteudo*/
+main {
+    background-color: var(--cor5);
+    font-family: var(--fontRaleway);
+    font-size: 100%;
+}
+.perfil {
+    width: 250px;
+    height: 250px;
+    padding-top: 20px;
+    border-radius: 50%;
+}
+
+.apresen {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ color: var(--cor3);
+ justify-content: space-around;
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    gap: 32px;
+    font-weight: 300px;
+    font-size: 64px;
+    padding-left: 18px;
+}
+.subtitulo {
+    font-weight: 200px;
+    font-size: 28px;
+    padding-left: 18px;
+}
+.botao {
+   background-color: #9BF2EA;
+   width: 180px;
+   height: 60px;
+   border: none;
+   box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 20px;
+   font-size: 18px;
+}
+.botao:hover {
+    background-color: var(--cor2);
+}
+
+.secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+.secundario-titulo {
+    border-top: 0.4px solid var(--cor3);
+    padding-top: 48px;
+    font-family: var(--fontRaleway);
+    font-weight: 400;
+    font-size: 24;
+    color: var(--cor3);
+    margin-bottom: 8px;
+}
+.secundario-paragrafo {
+    font-family: var(--fontRaleway);
+    font-size: 16px;
+    color: var(--cor3);
+}
+footer {
+    padding: 20px;
+    font-family: var(--fontRaleway);
+    border-top: 0.4px solid #9BF2EA;
+    text-align: center;
+    color: #9BF2EA;
+    background-color: #260101;
+
+}
+
+
